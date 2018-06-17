@@ -107,9 +107,7 @@ $(document).ready(function () {
                     // console.log("its a match!");
                     //clearInterval(interval);
                     wins++;
-                    $(".container-game").css("display", "none");
-                    $(".immediate-result-screen").addClass("display");
-                    $(".immediate-result-screen").empty();
+                   showResult();
                     $(".immediate-result-screen").append('<p id="correct"> CORRECT! </p> ')
                     $(".immediate-result-screen").append('<img id="gif" src=' + questions[questionIndex].gif + '>');
                     setTimeout(function () {
@@ -118,9 +116,7 @@ $(document).ready(function () {
                     //console.log("wins are: " + wins);
                 } else {
                     loses++;
-                    $(".container-game").css("display", "none");
-                    $(".immediate-result-screen").addClass("display");
-                    $(".immediate-result-screen").empty();
+                    showResult();
                     $(".immediate-result-screen").append('<p id="correct"> INCORRECT! </p> ')
                     $(".immediate-result-screen").append('<p id="correct"> answer was:' + questions[questionIndex].correctAnswer + '</p> ')
                     $(".immediate-result-screen").append('<img id="gif" src=' + questions[questionIndex].gif + '>');
@@ -143,8 +139,13 @@ $(document).ready(function () {
             if (counter === 0) {
                 noAnswerCounter++;
                 console.log(noAnswerCounter);
-                nextQuestion();
-
+                showResult();
+                $(".immediate-result-screen").append('<p id="correct"> INCORRECT! </p> ')
+                $(".immediate-result-screen").append('<p id="correct"> answer was:' + questions[questionIndex].correctAnswer + '</p> ')
+                $(".immediate-result-screen").append('<img id="gif" src=' + questions[questionIndex].gif + '>');
+                setTimeout(function () {
+                    nextQuestion();
+                }, 4000)
             }
         }, 1000);
     }
@@ -162,9 +163,7 @@ $(document).ready(function () {
             questionIndex = questionIndex + 1;
         } else {
             clearInterval(interval);
-            $(".container-game").css("display", "none");
-            $(".immediate-result-screen").addClass("display");
-            $(".immediate-result-screen").empty();
+           showResult();
             $(".immediate-result-screen").append('<p id="how-well"> How well did you do? </p>');
             $(".immediate-result-screen").append('<p> Correct Answers : ' + wins + '</p>');
             $(".immediate-result-screen").append('<p> Incorrect Answers : ' + loses + '</p>');
@@ -184,6 +183,11 @@ $(document).ready(function () {
         }
     })
 
+    function showResult(){
+        $(".container-game").css("display", "none");
+        $(".immediate-result-screen").addClass("display");
+        $(".immediate-result-screen").empty();
+    }
 
 
 
