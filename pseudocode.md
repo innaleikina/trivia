@@ -1,0 +1,14 @@
+- create an objects array to store all questions
+- each object will have 4 answers, one will have correct answer key
+- create a var for index incrementation
+- create a var to store user's answer
+- care win and loss counters
+- print first question to screen and all 4 answers
+- compare user's choice to the correct answer
+- have a btn that starts game
+- when btn is pressed timer starts
+- if timer runs out, question is counter as wrong answered and loss counter increments by one
+- if question was answered wrong the correct answer is shown for a few sconds after the timer runs   out. 
+- next question gets on the screen regradless of loss or win and the timer starts automatically 
+- when all the questions have been answered user gets to see a tally of the scores
+
