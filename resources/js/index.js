@@ -47,24 +47,23 @@ $(document).ready(function () {
             gif: "./resources/gifs/mug.gif",
 
         },
-        // {
-        //     question: "Who did Michael move to Colorado with?",
-        //     correctAnswer: "Holly",
-        //     answerOne: "Pam",
-        //     answerTwo: "Angela",
-        //     answerThree: "Kevin",
-        // gif: "./resources/gifs/holly.gif",
+        {
+            question: "Who did Michael move to Colorado with?",
+            correctAnswer: "Holly",
+            answerOne: "Pam",
+            answerTwo: "Angela",
+            answerThree: "Kevin",
+            gif: "./resources/gifs/holly.gif",
 
-        // },
-        // {
-        //     question: "What department did Toby work for?",
-        //     answerOne: "Fire Department",
-        //     answerTwo: "Accounting Department",
-        //     correctAnswer: "HR Department",
-        //     answer: "Marketing Department",
-        //gif: "./resources/gifs/toby.gif"
-
-        // },
+        },
+        {
+            question: "What department did Toby work for?",
+            answerOne: "Fire Department",
+            answerTwo: "Accounting Department",
+            correctAnswer: "HR Department",
+            answer: "Marketing Department",
+            gif: "./resources/gifs/toby.gif"
+        },
     ]
 
     var userChoice;
@@ -87,7 +86,7 @@ $(document).ready(function () {
 
         startGameClicked = false;
         answerClicked = false;
-        counter = 10;
+        counter = 20;
         $("#question").text(questions[questionIndex].question);
         //Dynamically populates the answers
         // console.log(questionIndex);
@@ -168,8 +167,8 @@ $(document).ready(function () {
             $(".immediate-result-screen").empty();
             $(".immediate-result-screen").append('<p id="how-well"> How well did you do? </p>');
             $(".immediate-result-screen").append('<p> Correct Answers : ' + wins + '</p>');
-            $(".immediate-result-screen").append('<p> Incorrect Answers : ' + loses +  '</p>');
-            $(".immediate-result-screen").append('<p> Unanswered Questions : ' + noAnswerCounter +  '</p>');
+            $(".immediate-result-screen").append('<p> Incorrect Answers : ' + loses + '</p>');
+            $(".immediate-result-screen").append('<p> Unanswered Questions : ' + noAnswerCounter + '</p>');
         }
         $("#answers").text("");
         setUp();
