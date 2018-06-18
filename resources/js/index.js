@@ -83,15 +83,7 @@ $(document).ready(function () {
     //*********************************************************************
 
     function setUp() {
-        x = $('#conatiner-all').height() + 20; // +20 gives space between div and footer
-        y = $(window).height();
-        if (x + 100 <= y) { // 100 is the height of your footer
-            $('#footer').css('top', y - 100 + 'px'); // again 100 is the height of your footer
-            $('#footer').css('display', 'block');
-        } else {
-            $('#footer').css('top', x + 'px');
-            $('#footer').css('display', 'block');
-        }
+
 
         startGameClicked = false;
         answerClicked = false;
