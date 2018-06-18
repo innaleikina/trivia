@@ -83,6 +83,15 @@ $(document).ready(function () {
     //*********************************************************************
 
     function setUp() {
+        x = $('#conatiner-all').height() + 20; // +20 gives space between div and footer
+        y = $(window).height();
+        if (x + 100 <= y) { // 100 is the height of your footer
+            $('#footer').css('top', y - 100 + 'px'); // again 100 is the height of your footer
+            $('#footer').css('display', 'block');
+        } else {
+            $('#footer').css('top', x + 'px');
+            $('#footer').css('display', 'block');
+        }
 
         startGameClicked = false;
         answerClicked = false;
@@ -107,7 +116,7 @@ $(document).ready(function () {
                     // console.log("its a match!");
                     //clearInterval(interval);
                     wins++;
-                   showResult();
+                    showResult();
                     $(".immediate-result-screen").append('<p id="correct"> CORRECT! </p> ')
                     $(".immediate-result-screen").append('<img id="gif" src=' + questions[questionIndex].gif + '>');
                     setTimeout(function () {
@@ -163,7 +172,7 @@ $(document).ready(function () {
             questionIndex = questionIndex + 1;
         } else {
             clearInterval(interval);
-           showResult();
+            showResult();
             $(".immediate-result-screen").append('<p id="how-well"> How well did you do? </p>');
             $(".immediate-result-screen").append('<p> Correct Answers : ' + wins + '</p>');
             $(".immediate-result-screen").append('<p> Incorrect Answers : ' + loses + '</p>');
@@ -183,7 +192,7 @@ $(document).ready(function () {
         }
     })
 
-    function showResult(){
+    function showResult() {
         $(".container-game").css("display", "none");
         $(".immediate-result-screen").addClass("display");
         $(".immediate-result-screen").empty();
