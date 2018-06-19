@@ -180,6 +180,7 @@ $(document).ready(function () {
             timer();
             setUp();
             startGameClicked = true;
+            $("#footer").css("display","flex");
             $("#start").hide();
         }
     })

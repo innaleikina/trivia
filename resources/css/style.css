@@ -210,8 +210,8 @@ footer {
     margin-top: 40px;
     width: 20%;
     display: block;
-    position:fixed;
-    bottom:0%;
+    position: fixed;
+    bottom: 0%;
     margin-left: 80%;
 }
 
@@ -222,7 +222,12 @@ footer {
         height: 40px;
         width: 50%;
         margin-left: 50%;
- 
+    }
+   
+    #footer {
+        display: none;
+        /* display:flex;
+        justify-content:space-around; */
     }
 }
 
