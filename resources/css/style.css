@@ -207,19 +207,22 @@ footer {
     align-items: center;
     justify-content: center;
     color: gray;
-    bottom: 0;
-    position: fixed;
-    right: 0%;
-    /* margin-top:5%; */
+    margin-top: 40px;
+    width: 20%;
+    display: block;
+    position:fixed;
+    bottom:0%;
+    margin-left: 80%;
 }
 
 @media only screen and (max-width:768px) {
     footer {
-        position: absolute;
-        margin-top:10%;
+        position: static;
         font-size: 11px;
         height: 40px;
-
+        width: 50%;
+        margin-left: 50%;
+ 
     }
 }
 
