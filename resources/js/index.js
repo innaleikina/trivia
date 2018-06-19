@@ -141,8 +141,8 @@ $(document).ready(function () {
                 noAnswerCounter++;
                 console.log(noAnswerCounter);
                 showResult();
-                $(".immediate-result-screen").append('<p id="incorrect"> INCORRECT! </p> ')
-                $(".immediate-result-screen").append('<p id="correct-answer"> answer was:' + questions[questionIndex].correctAnswer + '</p> ')
+                $(".immediate-result-screen").append('<p id="incorrect"> OUT OF TIME! </p> ')
+                $(".immediate-result-screen").append('<p id="correct-answer"> answer was : ' + questions[questionIndex].correctAnswer + '</p> ')
                 $(".immediate-result-screen").append('<img id="gif" src=' + questions[questionIndex].gif + '>');
                 setTimeout(function () {
                     nextQuestion();
