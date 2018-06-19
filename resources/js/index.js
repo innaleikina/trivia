@@ -118,8 +118,8 @@ $(document).ready(function () {
                 } else {
                     loses++;
                     showResult();
-                    $(".immediate-result-screen").append('<p id="correct"> INCORRECT! </p> ')
-                    $(".immediate-result-screen").append('<p id="correct"> answer was:' + questions[questionIndex].correctAnswer + '</p> ')
+                    $(".immediate-result-screen").append('<p id="incorrect"> INCORRECT! </p> ')
+                    $(".immediate-result-screen").append('<p id="correct-answer"> answer was : ' + questions[questionIndex].correctAnswer + '</p> ')
                     $(".immediate-result-screen").append('<img id="gif" src=' + questions[questionIndex].gif + '>');
                     setTimeout(function () {
                         nextQuestion();
