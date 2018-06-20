@@ -163,17 +163,19 @@ $(document).ready(function () {
         } else {
             clearInterval(interval);
             showResult();
-            $(".immediate-result-screen").append('<p id="how-well"> How well did you do? </p>');
-            $(".immediate-result-screen").append('<p> Correct Answers : ' + wins + '</p>');
-            $(".immediate-result-screen").append('<p> Incorrect Answers : ' + loses + '</p>');
-            $(".immediate-result-screen").append('<p> Unanswered Questions : ' + noAnswerCounter + '</p>');
-            console.log(wins);
-            console.log(questions.length);
-            // if (wins == questions.length) {
-            //     console.log("ultmate winner");
-            //     $(".immediate-result-screen").append('<img id="gif" src="./resources/gifs/dundee.gif">');
-            // }
-
+            if (wins == questions.length) {
+                console.log("ultmate winner");
+                $(".immediate-result-screen").append('<img id="gif" src="./resources/gifs/win-all.gif">');
+                $(".immediate-result-screen").append('<p id="how-well"> WHOAH! You got everything right! </p>')
+                $("#how-well").css("margin-top","20px");
+            } else {
+                $(".immediate-result-screen").append('<p id="how-well"> How well did you do? </p>');
+                $(".immediate-result-screen").append('<p> Correct Answers : ' + wins + '</p>');
+                $(".immediate-result-screen").append('<p> Incorrect Answers : ' + loses + '</p>');
+                $(".immediate-result-screen").append('<p> Unanswered Questions : ' + noAnswerCounter + '</p>');
+            }
+            // console.log(wins);
+            // console.log(questions.length);
         }
         $("#answers").text("");
         setUp();
