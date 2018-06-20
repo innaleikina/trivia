@@ -83,8 +83,6 @@ $(document).ready(function () {
     //*********************************************************************
 
     function setUp() {
-
-
         startGameClicked = false;
         answerClicked = false;
         counter = 20;
@@ -169,6 +167,13 @@ $(document).ready(function () {
             $(".immediate-result-screen").append('<p> Correct Answers : ' + wins + '</p>');
             $(".immediate-result-screen").append('<p> Incorrect Answers : ' + loses + '</p>');
             $(".immediate-result-screen").append('<p> Unanswered Questions : ' + noAnswerCounter + '</p>');
+            console.log(wins);
+            console.log(questions.length);
+            // if (wins == questions.length) {
+            //     console.log("ultmate winner");
+            //     $(".immediate-result-screen").append('<img id="gif" src="./resources/gifs/dundee.gif">');
+            // }
+
         }
         $("#answers").text("");
         setUp();
@@ -180,7 +185,7 @@ $(document).ready(function () {
             timer();
             setUp();
             startGameClicked = true;
-            $("#footer").css("display","flex");
+            $("#footer").css("display", "flex");
             $("#start").hide();
         }
     })
